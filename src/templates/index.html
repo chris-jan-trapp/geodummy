@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo geoServer running on {{ HOST_NAME }}</title>
+</head>
+<body>
+<h1>Hello There!</h1>
+<p>This is a minimal implementation that acts as a geoserver for TESTING PURPOSES ONLY!
+    Seriously, DO NOT USE THIS ANYWHERE NEAR PRODUCTION.
+    No single component is robust or has a tendency to fail in a safe manner.
+    Even the webserver is a development server and runs in DEBUG MODE.
+</p>
+<p>This thing has been build with <a href="https://flask.palletsprojects.com/en/1.1.x/">flask</a> and provides a minimal feature set.
+    There's this page ad the end point <a href="features/">features/</a> that either expects POST with json containing
+    <pre>{"features": [...]}</pre> or GET. POST will store the features and return the number of stored items
+    and GET will return all stored features.
+    NO CHECKING IS PERFORMED!
+    If your POST has features, they will be stored.
+</p>
+</body>
+</html>

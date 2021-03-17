@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from os import environ
 import requests
 import json
@@ -10,8 +10,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return f'Pseudo geo server running at {HOST_NAME}.'
+def index():
+    return render_template('index.html', HOST_NAME=HOST_NAME)
 
 
 @app.route('/features/', methods=['GET', 'POST'])

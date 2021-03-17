@@ -1,5 +1,5 @@
 .idea
-src/*.json
+src/full_protected_site.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
