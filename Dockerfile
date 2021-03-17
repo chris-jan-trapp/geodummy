@@ -4,6 +4,7 @@ VOLUME /var
 RUN mkdir -p /var/storage
 ENV DATA_FILE=/var/storage/database.json
 ENV FLASK_APP=geodummy.py
+ENV HOST_NAME=esx-80.gbv.de
 
 WORKDIR /usr/src/conf
 COPY Pipfile* ./
