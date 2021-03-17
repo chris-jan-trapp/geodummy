@@ -1,0 +1,17 @@
+FROM python:3.8
+
+VOLUME /var
+RUN mkdir -p /var/storage
+ENV DATA_FILE=/var/storage/database.json
+ENV FLASK_APP=geodummy.py
+
+WORKDIR /usr/src/conf
+COPY Pipfile* ./
+RUN pip3 install pipenv
+RUN pipenv install --system
+# RUN ( [ -e "$DATA_FILE" ] || echo '[]' > "$DATA_FILE" )
+
+WORKDIR /usr/src/app
+COPY ./src/* ./
+
+CMD [ "python3", "./geodummy.py" ]
