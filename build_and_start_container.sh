@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo docker stop geodummy
 sudo docker container rm geodummy
 cd /opt/geodummy
 sudo docker build -t "geodummy" .
