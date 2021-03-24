@@ -1,6 +1,11 @@
 name: Super-Linter
 
-on: push
+on:
+  workflow_run:
+    workflows: ["Paint it black"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   super-lint:
