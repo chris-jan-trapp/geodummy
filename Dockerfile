@@ -13,6 +13,6 @@ RUN pipenv install --system
 # RUN ( [ -e "$DATA_FILE" ] || echo '[]' > "$DATA_FILE" )
 
 WORKDIR /usr/src/app
-COPY ./src/* ./
+COPY ./src/. ./
 
 CMD [ "python3", "./geodummy.py" ]
