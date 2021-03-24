@@ -11,9 +11,13 @@ jobs:
         uses: actions/checkout@v2
       - name: setup
         uses: actions/setup-python@v2
-      - name: black
-        uses: psf/black@stable
-      - name: Commit & push
-        uses: actions-js/push@master
+      - name: Install dependencies
+        run: pip install black flake8
+      - name: lint
+        uses: wearerequired/lint-action@v1
         with:
+          black: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          auto_fix: true
+          commit_message: "fix: Ran ${linter}"
+
