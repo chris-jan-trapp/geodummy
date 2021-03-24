@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 from os import environ
-import requests
 import json
 
 
